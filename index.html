@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>الهلال الأحمر EMS</title>
+
+<style>
+body{
+margin:0;
+font-family:Tajawal;
+background:linear-gradient(180deg,#0b1020,#111a33);
+color:white;
+}
+
+nav{
+background:#c1121f;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-size:18px;
+}
+
+header{
+text-align:center;
+padding:60px;
+background:linear-gradient(45deg,#c1121f,#ff3b3b);
+box-shadow:0 0 30px red;
+}
+
+.btn{
+background:#5865F2;
+padding:15px 25px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+font-size:20px;
+}
+
+section{
+padding:40px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="rules.html">القوانين</a>
+<a href="ranks.html">الرتب</a>
+<a href="violations.html">المخالفات</a>
+</nav>
+
+<header>
+<h1>🚑 الهلال الأحمر EMS</h1>
+<p>النظام الرسمي لإدارة المسعفين</p>
+
+<br>
+
+<a class="btn" href="https://discord.gg/trz" target="_blank">
+دخول الديسكورد
+</a>
+</header>
+
+<section>
+<h2>مرحبا بكم في الهلال الأحمر</h2>
+<p>
+هنا تجد جميع القوانين والأنظمة والترقيات الخاصة بالمسعفين
+</p>
+</section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>قوانين EMS</title>
+
+<style>
+body{background:#0b1020;color:white;font-family:Tajawal;}
+nav{background:#c1121f;padding:15px;text-align:center;}
+nav a{color:white;margin:15px;text-decoration:none;}
+section{padding:30px;}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="rules.html">القوانين</a>
+<a href="ranks.html">الرتب</a>
+<a href="violations.html">المخالفات</a>
+</nav>
+
+<section>
+<h1>📜 قوانين الهلال الأحمر</h1>
+
+<ul>
+<li>احترام جميع اللاعبين</li>
+<li>ممنوع إساءة استخدام الصلاحيات</li>
+<li>الالتزام بالزي الرسمي</li>
+<li>عدم تجاهل البلاغات</li>
+<li>الرول بلاي الواقعي إجباري</li>
+<li>التواجد وقت الأحداث</li>
+<li>احترام الرتب العليا</li>
+<li>عدم سرقة أدوات طبية</li>
+</ul>
+
+</section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>الرتب</title>
+
+<style>
+body{background:#0b1020;color:white;font-family:Tajawal;}
+nav{background:#c1121f;padding:15px;text-align:center;}
+nav a{color:white;margin:15px;text-decoration:none;}
+table{width:100%;border-collapse:collapse;}
+td,th{border:1px solid #333;padding:12px;text-align:center;}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="rules.html">القوانين</a>
+<a href="ranks.html">الرتب</a>
+<a href="violations.html">المخالفات</a>
+</nav>
+
+<h1 align="center">🎖️ الرتب والترقيات</h1>
+
+<table>
+<tr>
+<th>الرتبة</th>
+<th>طريقة الترقية</th>
+</tr>
+
+<tr><td>متدرب</td><td>قبول مبدئي</td></tr>
+<tr><td>مسعف</td><td>3 أيام نشاط</td></tr>
+<tr><td>مسعف أول</td><td>10 بلاغات ناجحة</td></tr>
+<tr><td>مشرف</td><td>تقييم إداري</td></tr>
+<tr><td>نائب مدير</td><td>قرار إداري</td></tr>
+<tr><td>مدير</td><td>اختيار خاص</td></tr>
+
+</table>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>تقديم EMS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="apply.html">التقديم</a>
+</nav>
+
+<center>
+<h1>📝 تقديم الهلال الأحمر</h1>
+
+<input id="name" placeholder="اسمك">
+<input id="age" placeholder="عمرك">
+<input id="disc" placeholder="ديسكوردك">
+
+<br>
+<button onclick="send()">إرسال الطلب</button>
+</center>
+
+<script>
+function send(){
+
+let webhook="PUT-WEBHOOK-HERE";
+
+let data={
+content:
+"🚑 تقديم جديد EMS\n"+
+"👤 الاسم: "+name.value+
+"\n🎂 العمر: "+age.value+
+"\n💬 الديسكورد: "+disc.value
+};
+
+fetch(webhook,{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+});
+
+alert("تم إرسال طلبك للإدارة ✅");
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>EMS V4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="apply.html">التقديم</a>
+<a href="https://discord.gg/trz" target="_blank">الديسكورد</a>
+</nav>
+
+<div class="hero">
+<h1>🚑 الهلال الأحمر EMS</h1>
+<p>النظام الرسمي للمسعفين</p>
+
+<a class="btn" href="apply.html">التقديم الآن</a>
+</div>
+
+<div class="card">
+<h2>✨ نظام EMS المتطور</h2>
+<p>موقع احترافي لإدارة المسعفين والرول بلاي</p>
+</div>
+
+</body>
+</html>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(180deg,#0a0f1f,#111a33);
+color:white;
+}
+
+/* NAVBAR */
+nav{
+background:#c1121f;
+padding:15px;
+text-align:center;
+box-shadow:0 0 15px red;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-size:18px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:80px;
+background:linear-gradient(45deg,#c1121f,#ff3b3b);
+animation:fade 1.5s;
+}
+
+.btn{
+background:#5865F2;
+padding:15px 25px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
+}
+
+.card{
+background:#111a33;
+margin:20px;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px black;
+}
+
+input{
+width:80%;
+padding:12px;
+margin:10px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:15px 25px;
+background:#c1121f;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(-20px)}
+to{opacity:1}
+}<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>EMS SYSTEM</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(180deg,#0a0f1f,#111a33);
+color:white;
+scroll-behavior:smooth;
+}
+
+nav{
+background:#c1121f;
+padding:15px;
+text-align:center;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-size:18px;
+}
+
+header{
+text-align:center;
+padding:80px;
+background:linear-gradient(45deg,#c1121f,#ff3b3b);
+}
+
+section{
+padding:40px;
+margin:20px;
+background:#111a33;
+border-radius:12px;
+}
+
+.btn{
+background:#5865F2;
+padding:12px 20px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+td,th{
+border:1px solid #333;
+padding:12px;
+text-align:center;
+}
+
+input{
+width:90%;
+padding:12px;
+margin:10px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:15px 25px;
+background:#c1121f;
+color:white;
+border:none;
+border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#rules">القوانين</a>
+<a href="#ranks">الرتب</a>
+<a href="#violations">المخالفات</a>
+<a href="#apply">التقديم</a>
+<a href="https://discord.gg/trz" target="_blank">الديسكورد</a>
+</nav>
+
+<header>
+<h1>🚑 الهلال الأحمر EMS</h1>
+<p>النظام الرسمي للمسعفين</p>
+</header>
+
+<section id="rules">
+<h2>📜 القوانين</h2>
+<ul>
+<li>احترام الجميع</li>
+<li>رول بلاي واقعي</li>
+<li>عدم استغلال الصلاحيات</li>
+<li>الالتزام بالزي</li>
+<li>عدم تجاهل البلاغات</li>
+</ul>
+</section>
+
+<section id="ranks">
+<h2>🎖️ الرتب</h2>
+<ul>
+<li>متدرب</li>
+<li>مسعف</li>
+<li>مسعف أول</li>
+<li>مشرف</li>
+<li>نائب مدير</li>
+<li>مدير</li>
+</ul>
+</section>
+
+<section id="violations">
+<h2>🚨 المخالفات</h2>
+
+<table>
+<tr><th>المخالفة</th><th>العقوبة</th></tr>
+<tr><td>تجاهل بلاغ</td><td>إنذار</td></tr>
+<tr><td>إزعاج المرضى</td><td>خصم رتبة</td></tr>
+<tr><td>استغلال صلاحيات</td><td>فصل</td></tr>
+<tr><td>غياب متكرر</td><td>إنذارين</td></tr>
+</table>
+
+</section>
+
+<section id="apply">
+<h2>📝 تقديم EMS</h2>
+
+<input id="name" placeholder="اسمك">
+<input id="age" placeholder="عمرك">
+<input id="disc" placeholder="ديسكوردك">
+
+<br>
+<button onclick="send()">إرسال</button>
+
+</section>
+
+<script>
+function send(){
+let webhook="PUT-WEBHOOK-HERE";
+
+let data={
+content:
+"🚑 تقديم جديد EMS\n"+
+"👤 الاسم: "+name.value+
+"\n🎂 العمر: "+age.value+
+"\n💬 الديسكورد: "+disc.value
+};
+
+fetch(webhook,{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+});
+
+alert("تم إرسال الطلب ✅");
+}
+</script>
+
+</body>
+</html>
